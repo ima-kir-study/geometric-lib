@@ -11,5 +11,15 @@ def area(a: int) -> int:
     return a * a
 
 
-def perimeter(a):
+def perimeter(a: int) -> int:
+    '''
+    Возвращает периметр квадрата в формате целого числа.
+
+            Параметры:
+                    a (int): сторона квадрата
+
+            Возвращаемое значение:
+                    perimeter (int): периметр квадрата со стороной a
+    '''
     return 4 * a
+
