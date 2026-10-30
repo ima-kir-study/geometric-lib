@@ -1,4 +1,6 @@
 from geometric_lib import triangle
+from geometric_lib.errors import NegativeValueError
+from geometric_lib.errors import negative_value_error_msg
 
 import unittest
 
@@ -91,3 +93,28 @@ class TriangleTestCase(unittest.TestCase):
     def test_perimeter_big_all_sides(self):
         res = triangle.perimeter(2**500, 2**500, 2**500)
         self.assertEqual(res, 2**500 + 2**500 + 2**500)
+
+    def test_area_negative_height(self):
+        with self.assertRaises(NegativeValueError) as context:
+            triangle.area(100, -100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)
+
+    def test_area_negative_base(self):
+        with self.assertRaises(NegativeValueError) as context:
+            triangle.area(-100, 100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)
+
+    def test_perimeter_negative_first_side(self):
+        with self.assertRaises(NegativeValueError) as context:
+            triangle.perimeter(-100, 100, 100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)
+
+    def test_perimeter_negative_second_side(self):
+        with self.assertRaises(NegativeValueError) as context:
+            triangle.perimeter(100, -100, 100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)
+
+    def test_perimeter_negative_third_side(self):
+        with self.assertRaises(NegativeValueError) as context:
+            triangle.perimeter(100, 100, -100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)

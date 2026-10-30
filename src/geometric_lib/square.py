@@ -1,5 +1,5 @@
-from geometric_lib.errors import NegativeValue
-from geometric_lib.errors import negative_value_msg
+from geometric_lib.errors import NegativeValueError
+from geometric_lib.errors import negative_value_error_msg
 
 
 def area(a: int) -> int:
@@ -16,7 +16,7 @@ def area(a: int) -> int:
                     area(5) -> 25
     '''
     if a < 0:
-        raise NegativeValue(negative_value_msg)
+        raise NegativeValueError(negative_value_error_msg)
     return a * a
 
 
@@ -34,6 +34,6 @@ def perimeter(a: int) -> int:
                     perimeter(5) -> 20
     '''
     if a < 0:
-        raise NegativeValue(negative_value_msg)
+        raise NegativeValueError(negative_value_error_msg)
     return 4 * a
 

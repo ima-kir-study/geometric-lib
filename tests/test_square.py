@@ -1,4 +1,6 @@
 from geometric_lib import square
+from geometric_lib.errors import NegativeValueError
+from geometric_lib.errors import negative_value_error_msg
 
 import unittest
 
@@ -27,3 +29,13 @@ class SquareTestCase(unittest.TestCase):
     def test_perimeter_big_width(self):
         res = square.perimeter(2**500)
         self.assertEqual(res, 4 * 2**500)
+
+    def test_area_negative_width(self):
+        with self.assertRaises(NegativeValueError) as context:
+            square.area(-100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)
+
+    def test_perimeter_negative_width(self):
+        with self.assertRaises(NegativeValueError) as context:
+            square.perimeter(-100)
+        self.assertEqual(str(context.exception), negative_value_error_msg)
