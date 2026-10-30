@@ -3,7 +3,7 @@ from geometric_lib.errors import negative_value_error_msg
 
 
 def area(a: int, h: int) -> float:
-    '''
+    """
     Возвращает площадь треугольника в формате числа с плавающей точкой.
 
             Параметры:
@@ -16,14 +16,14 @@ def area(a: int, h: int) -> float:
 
             Пример вызова:
                     area(5, 5) -> 12.5
-    '''
+    """
     if a < 0 or h < 0:
         raise NegativeValueError(negative_value_error_msg)
     return a * h / 2
 
 
 def perimeter(a: int, b: int, c: int) -> int:
-    '''
+    """
     Возвращает периметр треугольника в формате целого числа.
 
             Параметры:
@@ -36,8 +36,7 @@ def perimeter(a: int, b: int, c: int) -> int:
 
             Пример вызова:
                     perimeter(5, 5, 5) -> 15
-    '''
+    """
     if a < 0 or b < 0 or c < 0:
         raise NegativeValueError(negative_value_error_msg)
     return a + b + c
-

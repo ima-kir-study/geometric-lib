@@ -3,7 +3,7 @@ from geometric_lib.errors import negative_value_error_msg
 
 
 def area(a: int) -> int:
-    '''
+    """
     Возвращает площадь квадрата в формате целого числа.
 
             Параметры:
@@ -14,14 +14,14 @@ def area(a: int) -> int:
 
             Пример вызова:
                     area(5) -> 25
-    '''
+    """
     if a < 0:
         raise NegativeValueError(negative_value_error_msg)
     return a * a
 
 
 def perimeter(a: int) -> int:
-    '''
+    """
     Возвращает периметр квадрата в формате целого числа.
 
             Параметры:
@@ -32,8 +32,7 @@ def perimeter(a: int) -> int:
 
             Пример вызова:
                     perimeter(5) -> 20
-    '''
+    """
     if a < 0:
         raise NegativeValueError(negative_value_error_msg)
     return 4 * a
-
