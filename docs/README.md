@@ -254,6 +254,18 @@ perimeter(r: int) -> float
 perimeter(5) -> 31.41592653589793
 ```
 
+# Зависимости
+
+- `uv`
+- `python==3.12`
+
+# Тесты
+
+```
+uv run coverage run -m unittest discover
+uv run coverage report
+```
+
 # История изменения проекта
 
 ```
