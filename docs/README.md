@@ -269,6 +269,18 @@ uv run coverage report
 # История изменения проекта
 
 ```
+c3069d3 style: format the code with ruff
+1712ff5 test: add tests to check negative values
+fb90273 feat: raise exception if value is negative
+ce8f394 docs(README): info about tests and requirements
+eb1ef2d chore: add .coverage to .gitignore
+3b436dd chore: install `coverage`
+c5af1a4 chore: switch to UV
+0e8d0ab test: add python package with tests
+18dba90 chore: add .gitignore
+9be1713 refactor: make a separate python package for app
+8c21eb2 docs(README): add params, return values, examples
+bf54784 docs(README): add project modification history
 63923b2 docs: add functions using examples
 bf2ef3b docs(README): add functions description
 70d7a6d docs(README): add general description of solution
