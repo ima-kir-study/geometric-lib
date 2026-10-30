@@ -1,9 +1,10 @@
 [project]
 name = "geometric-lib"
 version = "0.1.0"
-readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "coverage>=7.17.0",
+]
 
 [project.scripts]
 geometric-lib = "geometric_lib:main"
