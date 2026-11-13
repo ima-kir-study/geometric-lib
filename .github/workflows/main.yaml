@@ -27,8 +27,8 @@ jobs:
       - name: Print coverage info
         run: uv run coverage report
 
-  test-linux:
-    runs-on: windows
+  test-windows:
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
