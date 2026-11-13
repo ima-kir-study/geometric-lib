@@ -1,0 +1,29 @@
+name: Run tests
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v7
+        with:
+          python-version-file: "pyproject.toml"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v9
+        with:
+          version: "0.13.8"
+
+      - name: Run tests
+        run: uv run coverage run -m unittest discover
+
+      - name: Print coverage info
+        run: uv run coverage report
+
